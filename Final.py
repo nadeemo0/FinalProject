@@ -1,4 +1,6 @@
-# Print welcome message 
+import time
+
+
 def intro():
     print("Hello, and welcome to tic tac toe")
 
@@ -13,19 +15,24 @@ def dboard():
         print()
 
 def move():
-    # asks user to input row and column
-    row = int(input(f"{player}, enter a row:"))
-    column = int(input(f"{player}, enter a column:"))
-    # moving row and column
-    if row in range(3) and column in range(3) and board[row][column] == " ":
-        return row, column
+    while:
+        try:
+            # asks user to input row and column
+            row = int(input(f"{player}, enter a row:"))
+            column = int(input(f"{player}, enter a column:"))
+            # moving row and column
+            if row in range(3) and column in range(3) and board[row][column] == " ":
+                return row, column
+            print("Invalid move, try again")
+        except ValueError
+            print("Invalid move, try again")
     
 def checkwin():
     # check column
     if board[0][column] == player and board[1][column] == player and board[2][column] == player:
         return
     # check diagonals
-    
+
 
 def main():
 
