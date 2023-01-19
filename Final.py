@@ -29,9 +29,18 @@ def move():
     
 def checkwin():
     # check column
-    if board[0][column] == player and board[1][column] == player and board[2][column] == player:
-        return
+    for column in range(3):
+        if board[0][column] == player and board[1][column] == player and board[2][column] == player:
+            return
     # check diagonals
+    if board[0][2]== player and board[1][1] == player and board[2][0] == player:
+        return True
+    if board[0][0] == player and board [1][1] == player and board[2][2] == player:
+        return True
+    # check row
+    for row in range(3):
+        if board[row] == [player, player, player]
+    return False
 
 
 def main():
