@@ -64,12 +64,20 @@ def main():
         if checkwin("X"):
             print("X wins")
             break
+        # tie game possibility on X turn
+        if not any(" " in sublist for sublist in board):
+            print("Tie game!")
+            break
         # prompt for O's turn
         row, column = move("O")
         board[row][column] = "O"
         dboard()
         if checkwin("O"):
-            print("O wins")
+            print("O wins!")
+            break
+        # tie game possibility on O turn
+        if not any(" " in sublist for sublist in board):
+            print("Tie game!")
             break
 
 
