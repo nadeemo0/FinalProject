@@ -17,26 +17,28 @@ def dboard():
             print(board[i][j], end=" ")
         print()
 
+
 def move(player):
     while True:
         try:
             # asks user to input row and column
             row = int(input(f"{player}, enter a row:"))
             column = int(input(f"{player}, enter a column:"))
-            # moving row and column
+            # checking if row is full or not
             if row in range(3) and column in range(3) and board[row][column] == " ":
                 return row, column
             print("Invalid move, try again")
         except ValueError:
             print("Invalid move, try again")
     
+
 def checkwin(player):
     # check column
     for column in range(3):
         if board[0][column] == player and board[1][column] == player and board[2][column] == player:
             return True
     # check diagonals
-    if board[0][2]== player and board[1][1] == player and board[2][0] == player:
+    if board[0][2] == player and board[1][1] == player and board[2][0] == player:
         return True
     if board[0][0] == player and board [1][1] == player and board[2][2] == player:
         return True
@@ -54,14 +56,14 @@ def main():
     while True:
         # prompt for X's turn
         row, column = move("X")
-        board[row][column]
+        board[row][column] = "X"
         dboard()
         if checkwin("X"):
             print("X wins")
             break
         # prompt for O's turn
         row, column = move("O")
-        board[row][column]
+        board[row][column] = "O"
         dboard()
         if checkwin("O"):
             print("O wins")
