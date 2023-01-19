@@ -2,7 +2,10 @@ import time
 
 
 def intro():
-    print("Hello, and welcome to tic tac toe")
+    message = "Hello, and welcome to tic tac toe\n"
+    for char in message:
+        print(char, end='')
+        time.sleep(0.05)
 
 board = [[" " for _ in range(3)] for _ in range(3)]
 
@@ -10,9 +13,9 @@ def dboard():
     print("  0 1 2")
     for i in range(3):
         print(i, end=" ")
-    for j in range(3):
-        print(board[i][j], end=" ")
-    print()
+        for j in range(3):
+            print(board[i][j], end=" ")
+        print()
 
 def move(player):
     while True:
@@ -45,6 +48,8 @@ def checkwin(player):
 
 
 def main():
+    intro()
+    time.sleep(3)
     dboard()
     while True:
         # prompt for X's turn
