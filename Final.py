@@ -4,10 +4,13 @@ import time
 def intro():
     message = "Hello, and welcome to tic tac toe\n"
     for char in message:
-        print(char, end='')
+        print(char, end='', flush = True)
         time.sleep(0.05)
+    print("\n")
+    
 
 board = [[" " for _ in range(3)] for _ in range(3)]
+
 
 def dboard():
     print("  0 1 2")
@@ -40,7 +43,7 @@ def checkwin(player):
     # check diagonals
     if board[0][2] == player and board[1][1] == player and board[2][0] == player:
         return True
-    if board[0][0] == player and board [1][1] == player and board[2][2] == player:
+    if board[0][0] == player and board[1][1] == player and board[2][2] == player:
         return True
     # check row
     for row in range(3):
@@ -68,6 +71,7 @@ def main():
         if checkwin("O"):
             print("O wins")
             break
+
 
 if __name__ == "__main__":
     main()
